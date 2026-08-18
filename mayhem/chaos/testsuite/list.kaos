@@ -1,0 +1,366 @@
+list a = [1, 2, 3]
+print a
+list b = [true, false]
+print b
+list c = [3.2, 345.1665]
+print c
+list d = ['a', 'b', 'c']
+print d
+list e = ["A", "B", "C"]
+print e
+list f = [
+    'A',
+    "asdasdad12312",
+    1232,
+    435.16,
+    true,
+    false
+]
+print f
+list g = ["asdasdasd,", 123123]
+print g
+
+bool list arr1 = [true, false, true]
+print arr1
+num list arr2 = [1, 2, 63.3, 12321.1515]
+print arr2
+str list arr3 = ['A', "asdasdaqs", 'asdasd123123', "."]
+print arr3
+
+del f
+
+print a[2]
+print a[1]
+print a[0]
+print a[-1]
+print a[-2]
+print a[-3]
+
+print b[1]
+print c[1]
+print d[2]
+print e[0]
+print arr2[2]
+print arr3[3]
+
+num x = 5
+list y = [x, 2, 3]
+print y
+x = 32
+print x
+print y
+
+list z = [1, 2, 3]
+list t = z
+print z
+print t
+z[0] = 5
+print z
+print t
+
+list arr4 = [1, 2, 3]
+arr4[0] = 5
+print arr4
+
+bool list arr5 = [true, false]
+arr5[0] = false
+print arr5
+
+num list arr6 = [1, 2, 3]
+arr6[0] = 5
+print arr6
+
+str list arr7 = ['a', 'b', 'c']
+arr7[0] = 'd'
+print arr7
+
+list arr8 = [1, 2, 3, 4, 5]
+print arr8
+del arr8[1]
+print arr8
+del arr8[2]
+print arr8
+del arr8[0]
+print arr8
+del arr8[1]
+print arr8
+del arr8[0]
+print arr8
+
+list arr9 = [1, 2, 3]
+num var0 = arr9[0]
+print var0
+num var1 = 0
+var1 = arr9[1]
+print var1
+num var2 = arr9[-1]
+print var2
+num var3 = 0
+var3 = arr9[-2]
+print var3
+
+num i0 = 0
+num i1 = 1
+
+list arr11 = [true, false, true]
+bool var5 = arr11[i0]
+bool var6 = arr11[-i1]
+print var5
+print var6
+
+list arr12 = [1, 2, 3]
+num var7 = arr12[i0]
+num var8 = arr12[-i1]
+print var7
+print var8
+
+list arr13 = ['a', 'b', 'c']
+str var9 = arr13[i0]
+str var10 = arr13[-i1]
+print var9
+print var10
+
+any var11 = arr11[i0]
+any var12 = arr11[-i1]
+any var13 = arr12[i0]
+any var14 = arr12[-i1]
+any var15 = arr13[i0]
+any var16 = arr13[-i1]
+print var11
+print var12
+print var13
+print var14
+print var15
+print var16
+
+var5 = arr11[-i1]
+var6 = arr11[i0]
+print var5
+print var6
+
+var7 = arr12[-i1]
+var8 = arr12[i0]
+print var7
+print var8
+
+var9 = arr13[-i1]
+var10 = arr13[i0]
+print var9
+print var10
+
+var11 = arr11[-i1]
+var12 = arr11[i0]
+var13 = arr12[-i1]
+var14 = arr12[i0]
+var15 = arr13[-i1]
+var16 = arr13[i0]
+print var11
+print var12
+print var13
+print var14
+print var15
+print var16
+
+arr11[i0] = false
+print arr11
+arr11[-i1] = false
+print arr11
+
+arr12[i0] = 5
+print arr12
+arr12[-i1] = 6
+print arr12
+
+arr13[i0] = 'd'
+print arr13
+arr13[-i1] = 'e'
+print arr13
+
+del arr11[i0]
+print arr11
+del arr12[-i1]
+print arr12
+
+list v = [1,22,333]
+any i = v[0]
+any j = v[i]
+print j
+print v[i]
+
+
+// Nested lists
+del a
+del b
+del c
+
+list a = [1, 2, 3]
+list b = [4, 5, 6]
+list c = [a, b]
+
+print c
+
+del a
+list a = [['a', 'b'], 3]
+print a
+
+
+// Nested cross-complex
+del a
+del b
+list a = [0, 3]
+dict b = {'a': 1, 'b': 2}
+a[0] = b
+print a
+
+del a
+list a = [{'a': 1, 'b': 2}, 3]
+print a
+
+
+// Nested list access
+del a
+list a = [[1, 2], 3]
+print a[0][1]
+
+// Nested cross-complex access
+del a
+list a = [{'a': 1, 'b': 2}, 3]
+print a[0]['b']
+
+
+// Update list element or list's itself with a complex assignment
+del a
+list a = [1, 2, 3]
+a = [4, 5, 6]
+print a
+
+del a
+list a = [1, 2, 3]
+a[0] = [4, 5, 6]
+print a
+
+del a
+list a = [[1, 2], 3]
+a[0] = [4, 5, 6]
+print a
+
+// Update list element or list's itself with a cross-complex assignment
+del a
+list a = [1, 2, 3]
+a[0] = {'c': 3, 'd': 4}
+print a
+
+del a
+list a = [[1, 2], 3]
+a[0] = {'c': 3, 'd': 4}
+print a
+
+
+// Empty list assignment
+del a
+del b
+del c
+list a = []
+list b = []
+list c = [a, b]
+print c
+c[0] = 123
+print c
+c[1] = 'foo'
+print c
+
+
+// Complex element to complex element assignment
+del a
+del b
+list a = [1, 2]
+list b = [3, 4]
+a[0] = b[1]
+print a
+
+// Assignment on itself
+del a
+list a = [1, 2]
+a[0] = a[1]
+print a
+
+
+// Use multidimensional access to build a list
+del a
+del b
+list a = [[4, 5, 6], 3]
+list b = [a[1], a[0][1], a[0][0]]
+print b
+
+del a
+del b
+list a = [{'a': 4, 'b': 5, 'c': 6}, 3]
+list b = [a[1], a[0]['b'], a[0]['a']]
+print b
+
+del a
+del b
+dict a = {'a': [4, 5, 6], 'b': 3}
+list b = [a['b'], a['a'][1], a['a'][0]]
+print b
+
+
+// Multiline list declaration
+del a
+list a = [
+    [1, 2],
+    [3, 4],
+    [5, 6]
+]
+print a
+
+del a
+list a = [
+    {'a': 1, 'b': 2},
+    {'c': 3, 'd': 4},
+    {'e': 5, 'f': 6}
+]
+print a
+
+del a
+list a = [
+    {
+        'a': [1, 2],
+        'b': [3, 4]
+    },
+    {
+        'c': [5, 6],
+        'd': [7, 8]
+    },
+    {
+        'e': [9, 10],
+        'f': [11, 12]
+    }
+]
+print a
+
+
+// Nested list eat
+del a
+list a = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+
+print a[0]
+print a[1]
+print a[2]
+
+
+// Assigning list element to any
+del a
+list a = [
+    'x',
+    'y',
+    'z'
+]
+any el = a[1]
+el = 'g'
+print el
+

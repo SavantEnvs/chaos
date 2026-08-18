@@ -1,0 +1,324 @@
+dict a = {'a': 1, 'b': 2}
+print a
+dict b = {'a': 1, 'b': 2, 'c': 3}
+print b
+
+dict c = {"a": 1, "b": 2}
+print c
+dict d = {"a": 1, "b": 2, "c": 3}
+print d
+
+bool dict dict1 = {'a': true, 'b': false}
+print dict1
+num dict dict2 = {'a': 1, "b": 2, 'c': 63.3, 'd': 12321.1515}
+print dict2
+str dict dict3 = {
+    'a': 'A',
+    'b': "asdasdaqs",
+    'c': 'asdasd123123',
+    'd': "."
+}
+print dict3
+
+del b
+
+print a['a']
+print a["b"]
+
+num k = 5
+dict q = {'a': k, 'b': 2, 'c': 3}
+print q
+k = 32
+print k
+print q
+
+dict z = {'a': 1, 'b': 2, 'c': 3}
+dict t = z
+print z
+print t
+
+a['a'] = 15
+print a
+
+del d['a']
+print d
+
+dict e = {'a': 1, 'b': 2, 'c': 3}
+num var0 = e['a']
+print var0
+num var1 = 0
+var1 = e['b']
+print var1
+
+str s0 = 'a'
+str s1 = 'b'
+
+dict dict11 = {'a': true, 'b': false}
+bool var5 = dict11[s0]
+bool var6 = dict11[s1]
+print var5
+print var6
+
+dict dict12 = {'a': 1, 'b': 2}
+num var7 = dict12[s0]
+num var8 = dict12[s1]
+print var7
+print var8
+
+dict dict13 = {'a': 'a', 'b': 'b'}
+str var9 = dict13[s0]
+str var10 = dict13[s1]
+print var9
+print var10
+
+any var11 = dict11[s0]
+any var12 = dict11[s1]
+any var13 = dict12[s0]
+any var14 = dict12[s1]
+any var15 = dict13[s0]
+any var16 = dict13[s1]
+print var11
+print var12
+print var13
+print var14
+print var15
+print var16
+
+var5 = dict11[s1]
+var6 = dict11[s0]
+print var5
+print var6
+
+var7 = dict12[s1]
+var8 = dict12[s0]
+print var7
+print var8
+
+var9 = dict13[s1]
+var10 = dict13[s0]
+print var9
+print var10
+
+var11 = dict11[s1]
+var12 = dict11[s0]
+var13 = dict12[s1]
+var14 = dict12[s0]
+var15 = dict13[s1]
+var16 = dict13[s0]
+print var11
+print var12
+print var13
+print var14
+print var15
+print var16
+
+dict11[s0] = false
+print dict11
+dict11[s1] = true
+print dict11
+
+dict12[s0] = 5
+print dict12
+dict12[s1] = 6
+print dict12
+
+dict13[s0] = 'd'
+print dict13
+dict13[s1] = 'e'
+print dict13
+
+del dict11[s0]
+print dict11
+del dict12[s1]
+print dict12
+
+
+// Nested dictionaries
+del a
+del c
+
+dict a = {'a': 1, 'b': 2}
+dict b = {"a": 1, "b": 2}
+dict c = {"a": a, "b": b}
+
+print c
+
+del a
+dict a = {'a': {'a': 1, 'b': 2}, 'b': 3}
+print a
+
+
+// Nested cross-complex
+del a
+del b
+dict a = {'a': 1, 'b': 2}
+list b = [1, 2, 3]
+a['a'] = b
+print a
+
+del a
+dict a = {'a': [1, 2, 3], 'b': 2}
+print a
+
+
+// Nested dictionary access
+del a
+dict a = {'a': {'b': 1, 'c': 2}, 'd': 3}
+print a['a']['c']
+
+// Nested cross-complex access
+del a
+dict a = {'a': [1, 2], 'd': 3}
+print a['a'][1]
+
+
+// Update dictionary element or dictionary's itself with a complex assignment
+del a
+dict a = {'a': 1, 'b': 2}
+a = {'c': 3, 'd': 4}
+print a
+
+del a
+dict a = {'a': 1, 'b': 2}
+a['a'] = {'c': 3, 'd': 4}
+print a
+
+del a
+dict a = {'a': {'c': 3, 'd': 4}, 'b': 2}
+a['a'] = {'e': 5, 'f': 6}
+print a
+
+
+// Update dictionary element or dictionary's itself with a complex assignment
+del a
+dict a = {'a': 1, 'b': 2}
+a['a'] = [4, 5, 6]
+print a
+
+del a
+dict a = {'a': {'c': 3, 'd': 4}, 'b': 2}
+a['a'] = [4, 5, 6]
+print a
+
+
+// Empty dictionary assignment
+del a
+del b
+del c
+dict a = {}
+dict b = {}
+dict c = {'a': a, 'b': b}
+print c
+c['a'] = 123
+print c
+c['b'] = 'foo'
+print c
+
+
+// Complex element to complex element assignment
+del a
+del b
+dict a = {'a': 1, 'b': 2}
+dict b = {'c': 3, 'd': 4}
+a['a'] = b['d']
+print a
+
+// Assignment on itself
+del a
+dict a = {'a': 1, 'b': 2}
+a['a'] = a['b']
+print a
+
+// Use multidimensional access to build a dictionary
+del a
+del b
+dict a = {'a': {'c': 2, 'd': 3}, 'b': 1}
+dict b = {'a': a['b'], 'b': a['a']['d'], 'c': a['a']['c']}
+print b
+
+del a
+del b
+dict a = {'a': [1, 2, 3], 'b': 1}
+dict b = {'a': a['b'], 'b': a['a'][2], 'c': a['a'][1]}
+print b
+
+del a
+del b
+list a = [{'c': 2, 'd': 3}, 1]
+dict b = {'a': a[1], 'b': a[0]['d'], 'c': a[0]['c']}
+print b
+
+
+// Multiline dictionary declaration
+del a
+dict a = {
+    'a': {
+        'a': 1,
+        'b': 2
+    },
+    'b': {
+        'c': 3,
+        'd': 4
+    },
+    'c': {
+        'e': 5,
+        'f': 6
+    }
+}
+print a
+
+del a
+dict a = {
+    'a': [1, 2],
+    'b': [3, 4],
+    'c': [5, 6]
+}
+print a
+
+del a
+dict a = {
+    'a': [
+        {
+            'a': 1,
+            'b': 2
+        },
+        {
+            'c': 3,
+            'd': 4
+        }
+    ],
+    'b': [
+        {
+            'e': 5,
+            'f': 6
+        },
+        {
+            'g': 7,
+            'h': 8
+        }
+    ],
+    'c': [
+        {
+            'x': 9,
+            'y': 10
+        },
+        {
+            't': 11,
+            'v': 12
+        }
+    ]
+}
+print a
+
+
+// Nested dictionary eat
+del b
+dict b = {
+    'a': {'a': 1, 'b': 2, 'c': 3},
+    'b': {'a': 4, 'b': 5, 'c': 6},
+    'c': {'a': 7, 'b': 8, 'c': 9}
+}
+
+print b['a']
+print b['b']
+print b['c']

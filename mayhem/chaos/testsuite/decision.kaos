@@ -1,0 +1,79 @@
+void def hey()
+    print "hey"
+end
+
+void def hoy()
+    print "hoy"
+end
+
+num def add(num x, num y)
+    num z = x + y
+    bool a = true
+    return z
+end { a && true : hey() }
+
+print add(3, 5)
+
+num def sub(num x, num y)
+    num z = x - y
+    bool a = true
+    return z
+end { y > x : hey(), default : hoy() }
+
+print sub(5, 3)
+
+num def f1()
+    num a = 101
+    return a
+end
+
+num def f2()
+    num b = 102
+    return b
+end
+
+num def f3()
+    num c = 103
+    return c
+end
+
+num def f4(num x, num y)
+    num z = x + y
+    bool a = true
+end {
+    z == 8  : f1(),
+    z > 10  : f2(),
+    default : f3()
+}
+
+print f4(3, 5)
+
+
+num def f8()
+    num z = 999
+    return z
+end
+
+num def f7()
+    num z = 42
+    return z
+end
+
+num def f6(num b)
+    num y = b - 1
+end {
+    y > 1  : return y,
+    y == 1 : f7()
+}
+
+num def f5(num a)
+    num y = a - 1
+end {
+    y > 3  : f8(),
+    y == 3 : f6(y),
+    y == 2 : f6(y)
+}
+
+print f5(3)
+print f5(4)
+print f5(5)

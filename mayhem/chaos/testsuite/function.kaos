@@ -1,0 +1,459 @@
+void def a()
+    print "inside function a"
+    num val1 = 5
+    print val1
+end
+
+print "first print this"
+
+a()
+b()
+
+void def b()
+    print "inside function b"
+    num val2 = 8
+    print val2
+end
+
+str hello = 'hello world'
+num pi = 3.14
+
+str param1 = 'testing'
+
+void def f1(bool param1, num param2, str param3)
+    print param1
+    print param2
+    print param3
+end
+
+f1(true, 5, hello)
+f1(false, pi, "OMG!")
+
+print hello
+print pi
+
+list c = [1, 2, 3]
+
+list def f2(str param1, list param2)
+    print param1
+    return param2
+end
+
+print f2('List function parameter:', c)
+
+dict d = {'a': 'foo', 'b': 'bar', 'c': 'baz'}
+
+dict def f3(str param1, dict param2)
+    print param1
+    return param2
+end
+
+print f3('Dictionary function parameter:', d)
+
+num def add(num x, num y)
+    num result = x + y
+    return result
+end
+
+print add(3, 5)
+
+void def loop1()
+    print "hey"
+end
+
+void def loopInside()
+    print "start"
+    3 times do -> loop1()
+    print "end"
+end
+
+loopInside()
+
+any def anyF1()
+    any a = false
+    return a
+end
+
+print anyF1()
+
+any def anyF2()
+    num a = 5
+    return a
+end
+
+print anyF2()
+
+bool def boolF()
+    any a = false
+    return a
+end
+
+print boolF()
+
+// T_INT inside function
+void def tokenIntInsideFunction()
+    list a = [1, 2, 3]
+    print a
+end
+
+tokenIntInsideFunction()
+
+// Tests related to assignments from function returns
+
+import modules.lib
+
+
+bool def bool_f1()
+    bool a = true
+    return a
+end
+
+bool a = bool_f1()
+print a
+bool b = lib.bool_f1()
+print b
+
+
+num def num_f1()
+    num a = 5
+    return a
+end
+
+del a
+del b
+num a = num_f1()
+print a
+num b = lib.num_f1()
+print b
+
+
+str def str_f1()
+    str a = "foo"
+    return a
+end
+
+del a
+del b
+str a = str_f1()
+print a
+str b = lib.str_f1()
+print b
+
+
+any def any_f1()
+    any a = 7
+    return a
+end
+
+del a
+del b
+any a = any_f1()
+print a
+any b = lib.any_f1()
+print b
+
+
+list def list_f1()
+    list a = [1, 2, 3]
+    return a
+end
+
+del a
+del b
+list a = list_f1()
+print a
+list b = lib.list_f1()
+print b
+
+
+dict def dict_f1()
+    dict a = {'a': 1, 'b': 2, 'c': 3}
+    return a
+end
+
+del a
+del b
+dict a = dict_f1()
+print a
+dict b = lib.dict_f1()
+print b
+
+
+// Variable update from function returns
+
+del a
+bool a = false
+a = bool_f1()
+print a
+a = lib.bool_f1()
+print a
+
+del a
+num a = 0
+a = num_f1()
+print a
+a = lib.num_f1()
+print a
+
+del a
+str a = ''
+a = str_f1()
+print a
+a = lib.str_f1()
+print a
+
+del a
+any a = 0
+a = any_f1()
+print a
+a = lib.any_f1()
+print a
+
+del a
+list a = []
+a = list_f1()
+print a
+a = lib.list_f1()
+print a
+
+del a
+dict a = {}
+a = dict_f1()
+print a
+a = lib.dict_f1()
+print a
+
+
+// Complex element update from function returns
+
+del a
+del b
+list a = [1, 2, 3, 4, 5, 6]
+dict b = {'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5, 'f': 6}
+
+a[0] = bool_f1()
+print a
+a[0] = lib.bool_f1()
+print a
+b['a'] = bool_f1()
+print b
+b['a'] = lib.bool_f1()
+print b
+
+a[1] = num_f1()
+print a
+a[1] = lib.num_f1()
+print a
+b['b'] = num_f1()
+print b
+b['b'] = lib.num_f1()
+print b
+
+a[2] = str_f1()
+print a
+a[2] = lib.str_f1()
+print a
+b['c'] = str_f1()
+print b
+b['c'] = lib.str_f1()
+print b
+
+a[3] = any_f1()
+print a
+a[3] = lib.any_f1()
+print a
+b['d'] = any_f1()
+print b
+b['d'] = lib.any_f1()
+print b
+
+a[4] = list_f1()
+print a
+a[4] = lib.list_f1()
+print a
+b['e'] = list_f1()
+print b
+b['e'] = lib.list_f1()
+print b
+
+a[5] = dict_f1()
+print a
+a[5] = lib.dict_f1()
+print a
+b['f'] = dict_f1()
+print b
+b['f'] = lib.dict_f1()
+print b
+
+
+// Direct assignments to typed lists
+
+bool list def bool_list_test()
+    bool list x = [true, false]
+    return x
+end
+bool list bool_list_test_var = bool_list_test()
+print bool_list_test_var
+
+num list def num_list_test()
+    num list x = [1, 3.14]
+    return x
+end
+num list num_list_test_var = num_list_test()
+print num_list_test_var
+
+str list def str_list_test()
+    str list x = ['a', "b"]
+    return x
+end
+str list str_list_test_var = str_list_test()
+print str_list_test_var
+
+// Direct assignments to typed dictionaries
+
+bool dict def bool_dict_test()
+    bool dict x = {'a': true, 'b': false}
+    return x
+end
+bool dict bool_dict_test_var = bool_dict_test()
+print bool_dict_test_var
+
+num dict def num_dict_test()
+    num dict x = {'a': 1, 'b': 3.14}
+    return x
+end
+num dict num_dict_test_var = num_dict_test()
+print num_dict_test_var
+
+str dict def str_dict_test()
+    str dict x = {'a': 'a', "b": "b"}
+    return x
+end
+str dict str_dict_test_var = str_dict_test()
+print str_dict_test_var
+
+
+// Optional function parameters
+
+bool def bool_optional_param_test(bool param1, bool param2 = true)
+    print param1
+    print param2
+    return param1
+end
+
+bool_optional_param_test(true)
+bool_optional_param_test(false)
+
+bool_optional_param_test(true, false)
+bool_optional_param_test(false, true)
+
+num def num_optional_param_test(num param1, num param2 = 7)
+    print param1
+    print param2
+    return param1
+end
+
+num_optional_param_test(3)
+num_optional_param_test(3.14)
+num_optional_param_test(3, 5)
+num_optional_param_test(3, 5.12)
+num_optional_param_test(3.14, 5.12)
+
+str def str_optional_param_test(str param1, str param2 = 'baz')
+    print param1
+    print param2
+    return param2
+end
+
+print str_optional_param_test('foo')
+print str_optional_param_test('foo', 'bar')
+
+
+// Lists and dictionaries as function parameters
+
+void def list_as_params(str param1, list param2, list param3 = [4, 5, 6])
+    print param1
+    print param2
+    print param3
+end
+
+list_as_params('foo', [1, 2, 3])
+list_as_params('bar', [1, 2, 3], [7, 8, 9])
+
+void def dict_as_params(str param1, dict param2, dict param3 = {'d': 4, 'e': 5, 'f': 6})
+    print param1
+    print param2
+    print param3
+end
+
+dict_as_params('foo', {'a': 1, 'b': 2, 'c': 3})
+dict_as_params('bar', {'a': 1, 'b': 2, 'c': 3}, {'j': 7, 'k': 8, 'l': 9})
+
+
+// Typed lists and typed dictionaries as function parameters
+
+void def typed_list_as_params(str param1, num list param2, num list param3 = [4, 5, 6])
+    print param1
+    print param2
+    print param3
+end
+
+typed_list_as_params('foo', [1, 2, 3])
+typed_list_as_params('bar', [1, 2, 3], [7, 8, 9])
+
+void def typed_dict_as_params(str param1, num dict param2, num dict param3 = {'d': 4, 'e': 5, 'f': 6})
+    print param1
+    print param2
+    print param3
+end
+
+typed_dict_as_params('foo', {'a': 1, 'b': 2, 'c': 3})
+typed_dict_as_params('bar', {'a': 1, 'b': 2, 'c': 3}, {'j': 7, 'k': 8, 'l': 9})
+
+
+// Call function inside loop inside function
+
+num def call_inside_loop_inside_function(num n)
+	print n
+	num p = n+1
+	return p
+end
+
+void def loop2(num x, num r)
+    r = call_inside_loop_inside_function(x)
+    print r
+end
+
+void def test_call_inside_loop_inside_function()
+	num x = 0
+    num r = 0
+	3 times do -> loop2(x, r)
+end
+
+test_call_inside_loop_inside_function()
+
+// Call parameters in decision block
+
+num def multi_three(num x, num y, num z)
+    num r = x * y * z
+    return r
+end
+
+num def sum_two(num x, num y)
+    num r = x + y
+    return r
+end
+
+num def decision_params(num n)
+    num a = 2
+    num b = 3
+    num c = 5
+end {
+    n == 0  : sum_two(a, b),
+    n == 1  : sum_two(b, c),
+    default : multi_three(a, b, c)
+}
+
+print decision_params(0)
+print decision_params(1)
+print decision_params(2)

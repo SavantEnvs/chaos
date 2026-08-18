@@ -1,0 +1,18 @@
+project: savantenvs/chaos
+target: chaos
+
+# File-input (CLI) target: feed the fuzz bytes as a .kaos program to the chaos interpreter, driving
+# the whole lexer -> parser -> AST -> interpreter/JIT pipeline. chaos is an exit()-on-error batch
+# interpreter, so it can't be an in-process libFuzzer harness; the interpreter binary IS the target
+# (and its own single-input reproducer). build.sh compiles it with ASan+UBSan (halting), from which
+# Mayhem derives edge coverage. @@ is the input-file placeholder.
+# Hangs: the binary carries no timer of its own (issue #1298); a guest infinite loop (`infinite`, a
+# JIT'd hot loop) is bounded by Mayhem's per-test `timeout:` below (seconds per input), set explicitly
+# because Mayhem's 2 s default is too tight for the sanitized interpreter under its tracer.
+cmds:
+  - cmd: /mayhem/chaos @@
+    timeout: 5
+
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/chaos/testsuite

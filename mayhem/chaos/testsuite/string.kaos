@@ -1,0 +1,128 @@
+str var7 = "string1"
+var7 = 'string2'
+print var7
+str var8 = 'string3'
+var8 = "string4"
+print var8
+
+str a = 'hey'
+str b = a[1]
+str c = 'bom'
+c = a[2]
+print b
+print c
+
+str k = 'chaos'
+k[1] = 'k'
+del k[0]
+print k
+k[-1] = 'z'
+print k
+print k[-2]
+
+
+// Multiline string literals
+del a
+str a = "hello
+world"
+print a
+
+del a
+str a = '
+hello
+world
+'
+print a
+
+del a
+str a = "
+
+hello
+
+world
+
+"
+print a
+
+
+// String literals with escape sequences
+del a
+str a = 'hello\nworld'
+print a
+
+del a
+str a = "
+hello\n
+world
+"
+print a
+
+del a
+str a = "hello
+\n
+\n\n
+world\n"
+print a
+
+del a
+str a = "hello world\n"
+echo a
+
+del a
+str a = 'hello\tworld'
+print a
+
+del a
+str a = "hello\t\tworld"
+print a
+
+del a
+str a = 'hello"world'
+print a
+
+del a
+str a = "hello'world"
+print a
+
+del a
+str a = "hello\"world"
+print a
+
+del a
+str a = 'hello\'world'
+print a
+
+// Punctuation marks (special characters) in string literals
+del a
+str a = '!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~'
+print a
+
+del a
+str a = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~"
+print a
+
+
+// Use C string format specifiers in a Chaos string
+print "abc%s"
+del a
+str a = "12%s3"
+print a
+
+
+// New variable creation from another variable
+del a
+del b
+del c
+str a = 'hello world'
+str c = 'hello universe'
+str b = a
+print b
+print b
+str d = 'come on'
+print b
+
+// Multiple string concatenation
+print "hello" + " " + "world" + " " + "nice" + " " + "great"
+del a
+str a = "red" + " " + "blue" + " " + "green" + " " + "yellow"
+print a
